@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Item Details</title>
+    <!-- <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet"> -->
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+
+
+    <h1 class="container border border-dark mt-2"> Cipher </h1>
+    <h2>welcome please enter message: </h2>
+
+    <form method="post">
+        <input type="string" name="message" value="{{ message }}"/>
+        <input type="string" name="key" value="{{ key }}"/>
+        <input type="submit">
+    </form>
+
+    <div>
+        Result: {{ result }}
+    </div>
+
+    </div>
+</body>
+</html>
