@@ -1,32 +1,44 @@
 <html>
 <head>
-    <title>Item Details</title>
+    <title>decrypt</title>
     <!-- <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-warning">
     <div class="container">
 
 
-    <h1 class="container border border-dark mt-2"> Cipher </h1>
+    <h1 class="container border border-dark mt-2 mb-5 font-weight-bold"> cipherApp </h1>
     <h2>welcome please decrypt message: </h2>
 
     <form method="post">
-        <label>message: </label>
-        <input type="string" name="message" value="{{ message }}"/>
-        <label>key: </label>
-        <input type="string" name="key" value="{{ key }}"/>
-        <input type="submit">
+        <div class="form-group">
+            <label>message: </label>
+            <input class="w-75 form-control" type="string" name="message" value="{{ message }}"/>
+            <br>
+            <label>key: </label>
+            <input class="form-control w-25" type="string" name="key" value="{{ key }}"/>
+        <button class="btn btn-info" type="submit" value="decrypt"> decrypt </button>
     </form>
 
     <div>
-        Result: {{ result }}
-    </div>
+    <br>
+    <br>
 
+
+        encrypted massage:
+        <p class="text-info text-lg-center"> {{ result }}  </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <hr>
     <div>
         <h1>
-            <a href="decrypted.html"><button> DECRYPT </button>
+            <p>back to main page</p>
+            <a href="index">
+                <button class="btn btn-info"> ENCRYPT </button>
         </a>
         </h1>
 

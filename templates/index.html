@@ -1,36 +1,44 @@
 <html>
 <head>
-    <title>Item Details</title>
+    <title>cipherApp</title>
     <!-- <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
 </head>
-<body>
-    <div class="container">
+<body class="bg-dark">
+    <div class="container text-info">
 
 
-    <h1 class="container border border-dark mt-2"> Cipher </h1>
-    <h2>welcome please enter message: </h2>
+        <h1 class="container border border-dark mt-2 mb-5 font-weight-bold"> cipherApp </h1>
+        <h2 class="container text-center mb-5">welcome please enter message to encrypt with your key: </h2>
 
-    <form method="post">
-        <label>message: </label>
-        <input type="string" name="message" value="{{ message }}"/>
-        <label>key: </label>
-        <input type="string" name="key" value="{{ key }}"/>
-        <input type="submit">
-    </form>
+        <form method="post">
+            <div class="form-group">
+            <label>message: </label>
+            <input class="w-75 form-control" type="string" name="message" value="{{ message }}"/>
+            <br>
+            <label>key: </label>
+            <input class="form-control w-25" type="string" name="key" value="{{ key }}"/>
+            <button type="submit" value="encrypt" class="btn btn-primary m-3">encrypt</button>
+            </div>
+        </form>
 
-    <div>
-        Result: {{ result }}
-    </div>
+        <div class="container m-5 d-flex text-center">
+            Cipher message:
+            <textarea name="cipher" id="" cols="30" rows="1"> {{ result }}</textarea>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <br>
 
-    <div>
-        <h1>
-            <a href="decrypted"><button> DECRYPT </button>
-        </a>
-        </h1>
-
-    </div>
+        <div class="container text-left text-primary">
+            <h1>Here you can decrypt message</h1>
+            <h1>
+                <a href="decrypted"><button class="btn btn-warning"> DECRYPT </button>
+            </a>
+            </h1>
+        </div>
 
     </div>
 </body>
