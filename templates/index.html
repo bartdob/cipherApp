@@ -15,10 +15,10 @@
         <form method="post">
             <div class="form-group">
             <label>message: </label>
-            <input class="w-75 form-control" type="string" name="message" value="{{ message }}"/>
+            <input class="w-75 form-control" type="string" name="message" value="{{ message }}" required="true"/>
             <br>
             <label>key: </label>
-            <input class="form-control w-25" type="string" name="key" value="{{ key }}"/>
+            <input class="form-control w-25" type="string" name="key" value="{{ key }}" required="true"/>
             <button type="submit" value="encrypt" class="btn btn-primary m-3">encrypt</button>
             </div>
         </form>
