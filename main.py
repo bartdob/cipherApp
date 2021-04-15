@@ -13,10 +13,21 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 def read_notes(request: Request):
-    # result = encrypt(message)
     return templates.TemplateResponse("index.html", {
         'request': request,
-        # 'result': result
+    })
+
+@app.post('/')
+def form_post(request: Request, message: str = Form(...), key: str = Form(...)):
+    result = encrypt(message, key)
+    return templates.TemplateResponse('index.html', context={'request': request, 'result': result,
+    'message': message,
+    'key': key })
+
+@app.get("/decrypted", response_class=HTMLResponse)
+def read_notes(request: Request):
+    return templates.TemplateResponse("decrypted.html", {
+        'request': request,
     })
 
 @app.post('/')
