@@ -1,7 +1,6 @@
 <html>
 <head>
     <title>cipherApp</title>
-    <!-- <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
 </head>
@@ -25,7 +24,7 @@
 
         <div class="container m-5 d-flex text-center">
             Cipher message:
-            <textarea name="cipher" id="" cols="30" rows="1"> {{ result }}</textarea>
+            <textarea name="cipher" id="" cols="30" rows="1">{{result}}</textarea>
         </div>
         <br>
         <hr>
