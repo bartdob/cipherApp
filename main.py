@@ -55,8 +55,6 @@ def get_user(db, username: str):
 
 
 def fake_decode_token(token):
-    # This doesn't provide any security at all
-    # Check the next version
     user = get_user(fake_users_db, token)
     return user
 
@@ -97,28 +95,31 @@ async def read_users_me(current_user: User = Depends(get_current_active_user)):
 
 # ===================Main Page routes===================
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse) #main page
 def home(request: Request):
     return templates.TemplateResponse("index.html", {
         'request': request,
     })
 
-@app.post('/')
+@app.post('/')  # encrypt send
 def form_post(request: Request, message: str = Form(...), key: str = Form(...)):
     result = encrypt(message, key)
     return templates.TemplateResponse('index.html', context={'request': request, 'result': result,
     'message': message,
     'key': key })
 
-@app.get("/decrypted", response_class=HTMLResponse)
+@app.get("/decrypted", response_class=HTMLResponse) # decrypt page
 def home(request: Request):
     return templates.TemplateResponse("decrypted.html", {
         'request': request,
     })
 
-@app.post('/decrypted')
+@app.post('/decrypted') # decrypt send
 def form_post(request: Request, message: str = Form(...), key: str = Form(...)):
     result = decrypted(message, key)
     return templates.TemplateResponse('decrypted.html', context={'request': request, 'result': result,
     'message': message,
     'key': key })
+
+
+#=====================================================
