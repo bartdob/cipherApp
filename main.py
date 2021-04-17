@@ -7,6 +7,8 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel
 from typing import Optional
 
+app = FastAPI()
+
 fake_users_db = {
     "johndoe": {
         "username": "johndoe",
@@ -25,7 +27,6 @@ fake_users_db = {
 }
 
 
-app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
