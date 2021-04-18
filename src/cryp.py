@@ -1,6 +1,6 @@
 import secrets
 
-sign = ' 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!'
+sign = ' 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!ąęć:()#$%^&*'
 
 salt = secrets.token_hex(3) # create a salt function later add to encrypted message
 
