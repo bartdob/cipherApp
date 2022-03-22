@@ -27,6 +27,10 @@ fake_users_db = {
 
 app = FastAPI()
 
+@app.get("/", tags=["root"])
+async def read_root() -> dict:
+    return {"message": "Welcome to Cypher"}
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
